@@ -1,0 +1,61 @@
+.notification-card {
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDC;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.notification-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.notification-title span {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #2A2A2A;
+}
+
+.notification-indicator {
+  width: 8px;
+  height: 8px;
+  background-color: #6A28FC;
+  border-radius: 50%;
+}
+
+.notification-content p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #888888;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.notification-action {
+  margin-top: 8px;
+}
+
+.notification-action span {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2A2A2A;
+  cursor: pointer;
+}
+
+.notification-action span:hover {
+  text-decoration: underline;
+} 
