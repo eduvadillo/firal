@@ -14,7 +14,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "src", // Mantenido
+    "paths": { // Opcional pero recomendado
+      "@/*": ["./*"]
+    },
+    "typeRoots": ["node_modules/@types", "src/types"] // Desde Landing
   },
-  "include": ["src"]
+  "include": ["src"] // Asegura que incluya todo src
 }

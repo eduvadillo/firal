@@ -1,0 +1,99 @@
+.featuresSection {
+  background-color: #000000; /* Fondo base */
+  /*  padding: 5rem 0; */
+  color: #ffffff;
+  overflow: hidden; /* Evitar scroll horizontal por imagenes posicionadas */
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.mainTitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem; /* 40px */
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* Grid layout for features */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  /*   align-items: center; */
+  /*  height: 390px; */
+}
+
+.featureTitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.125rem; /* 18px */
+  margin-bottom: 1.5rem;
+}
+
+.imageContainer {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.imageContainer:hover {
+  transform: scale(1.03);
+}
+
+.featureImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .featuresSection {
+    padding: 0;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .featureCard {
+    height: auto;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .featureTitle {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1800px) {
+  .featureCard {
+    height: 390px;
+  }
+}

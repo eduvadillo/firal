@@ -1,0 +1,123 @@
+.nextInscriptionsCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.header h3 {
+  color: #333333;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  overflow: hidden;
+}
+
+.fairsList {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+.fairItem {
+  position: relative;
+  flex-shrink: 0;
+  height: 400px;
+}
+
+.fairInfo {
+  flex: 1;
+}
+
+.fairName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0 0 8px 0;
+}
+
+.fairDate {
+  font-size: 14px;
+  color: #686868;
+  margin: 0 0 4px 0;
+}
+
+.inscriptionsDate {
+  font-size: 14px;
+  color: #686868;
+  margin: 0;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.fairImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.viewAllButton {
+  background: transparent;
+  border: none;
+  color: #2a2a2a;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+  z-index: 1;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carouselButton:hover {
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.prevButton {
+  left: -20px;
+}
+
+.nextButton {
+  right: -20px;
+}

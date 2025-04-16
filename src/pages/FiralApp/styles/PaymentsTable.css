@@ -1,0 +1,148 @@
+.payments-table-container {
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDC;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.payments-header h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  margin: 0 0 8px 0;
+}
+
+.payments-header p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #686868;
+  margin: 0;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.payments-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Roboto', sans-serif;
+}
+
+.payments-table th {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid #DDDDDC;
+  font-size: 13px;
+  font-weight: 500;
+  color: #686868;
+}
+
+.payments-table td {
+  padding: 16px;
+  border-bottom: 1px solid #DDDDDC;
+  font-size: 14px;
+  color: #333333;
+  vertical-align: middle;
+}
+
+.payments-table tr:last-child td {
+  border-bottom: none;
+}
+
+.payments-table tbody tr:hover {
+  background-color: #F5F5F5;
+}
+
+.fair-name {
+  font-weight: 500;
+  color: #000000;
+}
+
+.amount {
+  font-weight: 500;
+}
+
+.payment-status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.payment-status.pending {
+  background-color: #FFF8E1;
+  color: #FBBC05;
+}
+
+.payment-status.paid {
+  background-color: #E8F5E9;
+  color: #34A853;
+}
+
+.payment-status.overdue {
+  background-color: #FFEBEE;
+  color: #EA4335;
+}
+
+.actions-cell {
+  width: 100px;
+}
+
+.action-button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #686868;
+  transition: background-color 0.2s ease;
+}
+
+.action-button:hover {
+  background-color: #EEEEEE;
+}
+
+.action-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.table-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.view-all-button {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6A28FC;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.view-all-button:hover {
+  opacity: 0.8;
+} 

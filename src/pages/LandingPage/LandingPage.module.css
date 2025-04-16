@@ -1,0 +1,17 @@
+/* Estilos originales de eduvadillo-landingroger/src/App.module.css */
+/* Ahora ubicados en src/pages/LandingPage/LandingPage.module.css */
+
+.app {
+  min-height: 100vh; /* Asegura que la landing ocupe al menos toda la altura de la pantalla */
+  display: flex;
+  flex-direction: column; /* Organiza Header, Main y Footer verticalmente */
+}
+
+main {
+  flex: 1; /* Permite que el contenido principal (main) crezca y ocupe el espacio disponible */
+  width: 100%;
+  margin: 0 auto; /* Centra el contenido si tiene un max-width (aunque aquí no se define) */
+  background-color: black; /* Fondo negro para la sección principal de la landing */
+}
+
+/* Si tenías más estilos específicos del layout principal de la landing en el App.module.css original, también estarían aquí. */

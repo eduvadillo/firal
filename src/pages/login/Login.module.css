@@ -1,0 +1,104 @@
+/* src/pages/login/Login.module.css */
+/* Styles adapted from SignUp.module.css for consistency */
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #f8f9fa; /* Light background */
+}
+
+.loginContainer h2 {
+  margin-bottom: 2rem;
+  color: #343a40; /* Darker heading */
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.loginForm {
+  background-color: #ffffff; /* White form background */
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px; /* Slightly wider if needed */
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem; /* Slightly more space */
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+.formGroup input[type='email'],
+.formGroup input[type='password'] {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.formGroup input:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.inputError {
+  border-color: #dc3545 !important; /* Red border for errors */
+}
+
+.inputError:focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.errorText {
+  color: #dc3545; /* Red error text */
+  font-size: 0.875rem;
+  margin-top: 0.4rem;
+}
+
+.submitButton {
+  padding: 0.9rem 1.5rem;
+  background-color: #343a40; /* Dark button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 1rem; /* Add some space above the button */
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #495057; /* Slightly lighter dark on hover */
+}
+
+.submitButton:disabled {
+  background-color: #6c757d; /* Grey out when disabled */
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  color: white;
+  background-color: #dc3545;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+}

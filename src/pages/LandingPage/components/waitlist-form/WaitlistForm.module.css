@@ -1,0 +1,305 @@
+.waitlistSection {
+  padding: 5rem 0;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1100px; /* Wider to accommodate side by side layout */
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.waitlistTitle {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* New two-column layout */
+.contentWrapper {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.textContent {
+  flex: 1;
+  text-align: left; /* Left-alçign the text content */
+}
+
+.inputError {
+  border-color: #e53e3e;
+}
+
+.errorMessage {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.privacyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.privacyLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #4a5568;
+}
+
+.privacyCheckbox {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.privacyError {
+  color: #ff4d4d;
+  font-size: 0.875rem;
+  /*  margin-left: 1.75rem; */
+  display: block;
+  font-weight: 500;
+}
+
+.title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem; /* 40px */
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem; /* 24px */
+  margin-bottom: 1.5rem;
+  color: #e0e0e0;
+}
+
+.description {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem; /* 16px */
+  color: #b0b0b0;
+  line-height: 1.6;
+}
+
+.form {
+  flex: 1;
+  background-color: #1f1f1f; /* Fondo del form */
+  padding: 2.5rem;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup:last-of-type {
+  margin-bottom: 2rem; /* Space before the checkbox */
+}
+
+.label {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  color: #e0e0e0;
+  margin-bottom: 0.5rem;
+}
+
+.input,
+.select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #171717; /* Fondo del input/select */
+  border: 0.5px solid #dddddc;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #9f67ff;
+  box-shadow: 0 0 0 2px rgba(159, 103, 255, 0.3);
+}
+
+/* Estilos específicos para el select con flecha */
+.selectWrapper {
+  position: relative;
+}
+
+.select {
+  appearance: none; /* Quitar flecha nativa */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2.5rem; /* Espacio para la flecha custom */
+}
+
+.selectArrow {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem; /* 20px */
+  height: 1.25rem;
+  pointer-events: none; /* Para que el clic vaya al select */
+  color: #888888; /* Color de la flecha Figma */
+}
+
+/* Estilos para el Checkbox */
+.formGroupCheckbox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.checkbox {
+  width: 1rem; /* 16px */
+  height: 1rem;
+  accent-color: #9f67ff; /* Color del check */
+  border-radius: 4px; /* Como en Figma rect 653 */
+  border: 0.5px solid #dddddc;
+  background-color: #171717;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox:checked {
+  background-color: #9f67ff;
+  border-color: #9f67ff;
+}
+
+.checkbox:checked::before {
+  content: "✓"; /* Checkmark simple */
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.checkboxLabel {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  color: #e0e0e0;
+  cursor: pointer;
+}
+
+.privatPolicy {
+  text-decoration: underline;
+}
+
+.submitButton {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  color: #ffffff;
+  background: linear-gradient(to right, #9f67ff, #6a28fc);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submitButton:hover:not(.submitButtonDisabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(159, 103, 255, 0.4);
+}
+
+.submitButton:disabled {
+  background: linear-gradient(to right, #9f67ff80, #6a28fc80);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.submitButtonDisabled {
+  background: linear-gradient(to right, #9f67ff80, #6a28fc80);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.formMessage {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.success {
+  background-color: rgba(46, 204, 113, 0.15);
+  border: 1px solid rgba(46, 204, 113, 0.4);
+  color: #2ecc71;
+}
+
+.error {
+  background-color: rgba(231, 76, 60, 0.15);
+  border: 1px solid rgba(231, 76, 60, 0.4);
+  color: #e74c3c;
+}
+
+.errorMessage {
+  color: #ff4d4d;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: block;
+  font-weight: 500;
+}
+
+.inputError {
+  border-color: #ff4d4d !important;
+  box-shadow: 0 0 0 1px rgba(255, 77, 77, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .contentWrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .textContent {
+    text-align: center;
+  }
+
+  .form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 1.25rem;
+  }
+  .form {
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,80 @@
+.footer {
+  background-color: #000000; /* Fondo negro base */
+  padding: 3rem 0 2rem; /* Menos padding que otras secciones */
+  color: #ffffff;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  max-width: 960px;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #171717; /* Color de la linea en Figma */
+  margin-bottom: 2rem;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Para pantallas pequeñas */
+  gap: 1rem;
+}
+
+.social {
+  display: flex;
+}
+
+.logo {
+  height: 1.1rem; /* Ajustar según sea necesario */
+  width: auto;
+}
+
+.copyright {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  color: #e0e0e0; /* Texto blanco */
+  margin: 0; /* Quitar margen por defecto */
+}
+
+.socialLink {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  color: #e0e0e0; /* Texto blanco */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.socialLink:hover {
+  color: #9f67ff; /* Color de acento al hacer hover */
+}
+
+.separation {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .copyright {
+    order: 3; /* Mover copyright al final */
+  }
+  .logo {
+    order: 1;
+  }
+  .social {
+    order: 2;
+  }
+}

@@ -1,0 +1,158 @@
+.hero {
+  position: relative;
+  min-height: 100vh; /* O altura especifica si se conoce */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: #ffffff;
+  overflow: hidden;
+  padding-top: 80px; /* Espacio para el header absoluto */
+}
+
+.backgroundContainer {
+  position: absolute;
+  /* Posicionar solo en la parte inferior, después del texto principal */
+  top: 30%; /* Aproximadamente debajo del texto de la plataforma */
+  left: 0;
+  width: 100%;
+  height: 70%; /* Altura suficiente para llegar hasta el final del dashboard */
+  z-index: 1;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  filter: blur(3px); /* Efecto blur del Figma */
+  /*  transform: scale(1.1);  Para evitar bordes por el blur */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative; /* Para que el contenido este sobre el fondo */
+  z-index: 1;
+  width: 100%;
+}
+
+.content {
+  max-width: 800px;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 4rem; /* 64px */
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.ctaButton {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  color: #ffffff;
+  background: linear-gradient(to right, #9f67ff, #6a28fc);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(159, 103, 255, 0.4);
+}
+
+.imageContainer {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 2rem;
+  position: relative;
+}
+
+/* Nuevo contenedor para la imagen del dashboard y su overlay */
+.dashboardWrapper {
+  position: relative;
+  width: 100%;
+  max-height: 900px;
+  border-radius: 24px;
+  overflow: hidden; /* Para que el overlay no se salga */
+}
+
+.dashboardImage {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: block; /* Eliminar espacio extra debajo de la imagen */
+}
+
+/* Overlay con el degradado para la parte inferior */
+.dashboardOverlay {
+  position: absolute;
+  width: 100%;
+  height: 257px; /* Altura especificada */
+  left: 0;
+  bottom: 0; /* Posicionar desde abajo en vez de top */
+  background: linear-gradient(1.57deg, #000000 1.44%, rgba(0, 0, 0, 0) 98.78%);
+  border-radius: 0px 0px 24px 24px; /* Solo redondear las esquinas inferiores */
+  z-index: 3; /* Encima de la imagen */
+}
+
+/* La imagen del dashboard (430:5556) está dentro de un grupo complejo */
+/* con máscaras y rectángulos adicionales (430:5550). */
+/* Replicar esto fielmente puede requerir posicionamiento absoluto */
+/* y elementos adicionales si es necesario. */
+/* Por ahora, mostraremos la imagen principal centrada. */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-top: 100px;
+    padding-bottom: 3rem;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .subtitle {
+    font-size: 1.125rem;
+  }
+  .imageContainer {
+    margin-top: 1rem;
+  }
+  .backgroundContainer {
+    top: 50%; /* Ajustar posición para dispositivos móviles */
+  }
+  .dashboardOverlay {
+    height: 150px; /* Reducir tamaño en móviles */
+  }
+
+  .dashboardImage {
+    border-radius: 10px;
+  }
+
+  .dashboardWrapper {
+    border-radius: 10px;
+  }
+}

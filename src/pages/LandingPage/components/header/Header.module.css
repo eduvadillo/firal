@@ -1,0 +1,58 @@
+.header {
+  background-color: #000000; /* Asumo fondo negro como base */
+  padding: 1rem 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+}
+
+.logo {
+  height: 1.1rem; /* Ajustar segun el tamaño deseado */
+  width: auto;
+}
+
+.signUpButton {
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif; /* Asegurarse que Roboto esta cargado */
+  font-weight: 700;
+  font-size: 0.75rem; /* 12px */
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  margin-right: 0.5rem; /* Add some space between buttons */
+}
+
+.signUpButton:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.loginLink {
+  background-color: transparent; /* Ensure login button is transparent initially */
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif; /* Asegurarse que Roboto esta cargado */
+  font-weight: 700;
+  font-size: 0.75rem; /* 12px */
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent; /* Para mantener espacio, se puede hacer visible al hacer hover */
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.loginLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

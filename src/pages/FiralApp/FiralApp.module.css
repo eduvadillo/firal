@@ -1,0 +1,52 @@
+/* Estilos originales de eduvadillo-firal/src/styles/App.css */
+/* Ahora ubicados en src/pages/FiralApp/FiralApp.module.css */
+
+/* Contenedor principal que envuelve SideMenu y Main Content */
+.app-container {
+  display: flex; /* Coloca SideMenu y Main Content uno al lado del otro */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  width: 100%; /* Ocupa todo el ancho */
+  overflow: hidden; /* Evita el scroll en el contenedor principal (el scroll estará en main-content) */
+}
+
+/* Área principal donde se renderizará el contenido del dashboard (Header, Dashboard.tsx, etc.) */
+.main-content {
+  flex: 1; /* Hace que esta área ocupe el espacio restante al lado del SideMenu */
+  overflow-y: auto; /* Habilita el scroll vertical si el contenido es más alto que el área visible */
+  background-color: #f9f9f9; /* Un fondo ligeramente gris para diferenciar del SideMenu blanco */
+  /* Considera añadir padding aquí o dentro del componente Header/Dashboard si es necesario */
+  /* padding: 24px; */
+}
+
+/* --- Media Query para Responsividad --- */
+/* Ajustes para pantallas más pequeñas (ej. tablets) */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column; /* Apila el SideMenu encima del Main Content */
+  }
+
+  /*
+   * NOTA: Los estilos específicos del SideMenu en modo responsivo
+   * (como limitar su altura a 60px y ocultar el overflow)
+   * probablemente deberían manejarse DENTRO del componente SideMenu
+   * y su propio archivo CSS/Module (SideMenu.module.css).
+   *
+   * Mantengo la regla para `.side-menu` aquí solo para reflejar
+   * el App.css original, pero si tu SideMenu usa CSS Modules,
+   * esta regla podría no aplicarse correctamente. Necesitarías asegurar
+   * que la clase 'side-menu' se aplique al elemento raíz del SideMenu
+   * o mover esta lógica a SideMenu.module.css.
+   */
+  /* .side-menu { */
+  /* width: 100%; */
+  /* height: auto; */
+  /* max-height: 60px; /* Ejemplo: Limitar altura para una barra superior */
+  /* overflow: hidden; */
+  /* } */
+
+  .main-content {
+    /* Ajusta la altura para ocupar el espacio restante debajo del SideMenu apilado */
+    /* Cambia '60px' si la altura del SideMenu en móvil es diferente */
+    height: calc(100vh - 60px);
+  }
+}
