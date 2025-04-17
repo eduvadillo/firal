@@ -1,7 +1,7 @@
 // FairsCarousel.tsx
 import React, { useState } from 'react';
-import styles from '../styles/FairsCarousel.module.css';
-import { HeartIcon } from './icons';
+import styles from './styles/FairsCarousel.module.css';
+import { HeartIcon } from '../icons';
 
 interface Fair {
   id: string;

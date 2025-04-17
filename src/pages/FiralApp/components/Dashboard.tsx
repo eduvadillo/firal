@@ -1,21 +1,21 @@
 import React from 'react';
-import Header from './Header';
-import CountdownCard from './CountdownCard';
-import PolicyReminder from './PolicyReminder';
-import NewMessages from './NewMessages';
-import InscriptionsCard from './InscriptionsCard';
-import FairsCarousel from './FairsCarousel';
+import Header from './Dashboard/Header';
+import AlertCard from './Dashboard/AlertCard';
+import PolicyReminder from './Dashboard/PolicyReminder';
+import NewMessages from './Dashboard/NewMessages';
+import InscriptionsCard from './Dashboard/InscriptionsCard';
+import FairsCarousel from './Dashboard/FairsCarousel';
 import NextInscriptionsCard from './NextInscriptionsCard';
 import WeatherCard from './WeatherCard';
-import DetailedWeatherCard from './DetailedWeatherCard';
-import CommunicationsCard from './CommunicationsCard';
+import DetailedWeatherCard from './Dashboard/DetailedWeatherCard';
+import CommunicationsCard from './Dashboard/CommunicationsCard';
 import RatingsCard from './RatingsCard';
 import ApplicationsTable from './ApplicationsTable';
 import PaymentsTable from './PaymentsTable';
 import FairCarousel from './FairCarousel';
-import RequestsTable from './RequestsTable';
-import PaymentsHistoryTable from './PaymentsHistoryTable';
-import RatingsTable from './RatingsTable';
+import RequestsTable from './Dashboard/RequestsTable';
+import PaymentsHistoryTable from './Dashboard/PaymentsHistoryTable';
+import RatingsTable from './Dashboard/RatingsTable';
 import '../styles/Dashboard.css';
 
 const Dashboard: React.FC = () => {
@@ -99,7 +99,11 @@ const Dashboard: React.FC = () => {
         <div className="dashboard-content">
           <div className="dashboard-grid">
             <div className="top-cards">
-              <CountdownCard daysLeft={15} nextFairName="Molins de Rei (Baix Llobregat)" />
+              <AlertCard
+                daysLeft={15}
+                fairLocation="Molins de Rei (Baix Llobregat)"
+                fairName="Fira de la Candelaria"
+              />
               <PolicyReminder />
               <NewMessages messages={mockMessages} />
             </div>

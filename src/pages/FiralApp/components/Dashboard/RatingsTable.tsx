@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from '../styles/RatingsTable.module.css';
-import { StarIcon } from './icons';
+import styles from './styles/RatingsTable.module.css';
+import { StarIcon } from '../icons';
 
 interface Rating {
   id: string;

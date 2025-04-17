@@ -1,6 +1,6 @@
 import React from 'react';
-import { MessageIcon } from './icons';
-import styles from '../styles/NewMessages.module.css';
+import { MessageIcon } from '../icons';
+import styles from './styles/NewMessages.module.css';
 
 interface Message {
   id: string;

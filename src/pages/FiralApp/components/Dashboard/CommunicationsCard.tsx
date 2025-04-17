@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/CommunicationsCard.module.css';
+import styles from './styles/CommunicationsCard.module.css';
 
 const CommunicationsCard: React.FC = () => {
   const mockConversations = [

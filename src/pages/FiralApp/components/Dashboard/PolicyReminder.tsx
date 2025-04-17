@@ -1,6 +1,6 @@
 import React from 'react';
-import { StorefrontIcon } from './icons';
-import '../styles/PolicyReminder.css';
+import { StorefrontIcon } from '../icons';
+import './styles/PolicyReminder.css';
 
 const PolicyReminder: React.FC = () => {
   const handleUpload = () => {

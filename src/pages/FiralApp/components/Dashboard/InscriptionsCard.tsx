@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../styles/InscriptionsCard.module.css';
+import styles from './styles/InscriptionsCard.module.css';
 
 const InscriptionsCard: React.FC = () => {
   const [currentDate, setCurrentDate] = useState(new Date());

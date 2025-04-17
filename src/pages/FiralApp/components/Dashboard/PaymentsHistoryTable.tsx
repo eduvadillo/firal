@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/PaymentsHistoryTable.module.css';
+import styles from './styles/PaymentsHistoryTable.module.css';
 
 interface Transaction {
   id: string;

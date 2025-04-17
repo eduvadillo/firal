@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/DetailedWeatherCard.module.css';
+import styles from './styles/DetailedWeatherCard.module.css';
 import { FiChevronDown, FiSun, FiCloud, FiCloudRain } from 'react-icons/fi';
 
 const DetailedWeatherCard: React.FC = () => {

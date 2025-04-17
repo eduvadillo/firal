@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/RequestsTable.module.css';
+import styles from './styles/RequestsTable.module.css';
 
 interface Request {
   id: string;
