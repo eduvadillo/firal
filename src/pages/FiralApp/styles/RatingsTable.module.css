@@ -1,3 +1,4 @@
+/* RatingsTable.module.css */
 .card {
   background-color: #ffffff;
   border: 1px solid #dddddc;
@@ -30,8 +31,12 @@
   font-weight: 400;
   color: #6a28fc;
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none;
   padding: 0;
+}
+
+.viewAll:hover {
+  text-decoration: underline;
 }
 
 .subtitle {
@@ -44,82 +49,71 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 
-.item {
+.row {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #dddddc;
 }
 
-.avatar {
+.row:last-child {
+  border-bottom: none;
+}
+
+.fairCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoCell {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   overflow: hidden;
-  flex-shrink: 0;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.avatar img {
+.logo {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.content {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.meta {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.sender {
+.fairName {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: #1c1c1e;
 }
 
-.date {
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  color: #686868;
-}
-
-.previewContainer {
+.starsCell {
   display: flex;
-  flex-direction: column;
-  align-items: end;
+  align-items: center;
   gap: 8px;
 }
 
-.preview {
+.dateCell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  color: #686868;
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-.badge {
-  background-color: #6a28fc;
-  color: #ffffff;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Roboto', sans-serif;
+.date {
+  font-size: 14px;
+  color: #686868;
+}
+
+.ratingValue {
   font-size: 14px;
   font-weight: 500;
+  color: #1c1c1e;
 }

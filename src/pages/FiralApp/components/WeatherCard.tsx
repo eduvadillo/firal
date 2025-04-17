@@ -88,7 +88,7 @@ const WeatherCard: React.FC = () => {
           windSpeed: Math.round(weatherData.current.wind_speed_10m),
           visibility: Math.round(weatherData.current.visibility / 1000),
           forecast: weatherData.daily.weather_code
-            .slice(1, 6)
+            .slice(1, 5)
             .map((code: number, index: number) => ({
               date: getDayName(weatherData.daily.time[index + 1]),
               temp: Math.round(
@@ -147,11 +147,14 @@ const WeatherCard: React.FC = () => {
   return (
     <div className={styles['weather-card']}>
       <div className={styles['weather-header']}>
-        <h3>{weatherData.location}</h3>
+        <h3>Meteorologia</h3>
         <div className={styles['date-selector']}>
           <span>Avui</span>
         </div>
       </div>
+      <p className={styles['instructions']}>
+        Aquí pots consultar quines vacunes hauràs de subministrar avui
+      </p>
 
       <div className={styles['current-weather']}>
         <div className={styles['temperature-info']}>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { CalendarIcon } from './icons';
+import { CalendarIcon, HeartIcon, StarIcon, LocationIcon } from './icons';
 import styles from '../styles/NextInscriptionsCard.module.css';
 
 interface Fair {
@@ -8,15 +8,23 @@ interface Fair {
   date: string;
   inscriptionsDate: string;
   imageUrl: string;
+  location: string;
+  rating: number;
+  tags: string[];
+  isFavorite: boolean;
 }
 
-const mockFairs: Fair[] = [
+const initialMockFairs: Fair[] = [
   {
     id: '1',
     name: 'Fira de la Candelera',
     date: '2 de febrer de 2024',
     inscriptionsDate: 'Inscripcions: 1 - 15 de gener',
     imageUrl: '/assets/images/candalera.png',
+    location: 'Molins de Rei',
+    rating: 4.8,
+    tags: ['Gastronomia', 'Popular'],
+    isFavorite: false,
   },
   {
     id: '2',
@@ -24,6 +32,10 @@ const mockFairs: Fair[] = [
     date: '13 de maig de 2024',
     inscriptionsDate: "Inscripcions: 1 - 30 d'abril",
     imageUrl: '/assets/images/lactium.png',
+    location: 'Vic',
+    rating: 4.5,
+    tags: ['Formatges', 'Artesania'],
+    isFavorite: true,
   },
   {
     id: '3',
@@ -31,52 +43,45 @@ const mockFairs: Fair[] = [
     date: '13 de maig de 2024',
     inscriptionsDate: "Inscripcions: 1 - 30 d'abril",
     imageUrl: '/assets/images/literal.png',
+    location: 'Barcelona',
+    rating: 4.2,
+    tags: ['Llibres', 'Radical'],
+    isFavorite: false,
   },
   {
     id: '4',
-    name: 'Mercat de Vic',
-    date: '13 de maig de 2024',
-    inscriptionsDate: "Inscripcions: 1 - 30 d'abril",
+    name: 'Mercat Medieval Vic',
+    date: 'Desembre 2024',
+    inscriptionsDate: 'Inscripcions: Properament',
     imageUrl: '/assets/images/vic.png',
+    location: 'Vic',
+    rating: 4.9,
+    tags: ['Medieval', 'Gran Afluència'],
+    isFavorite: false,
   },
   {
     id: '5',
-    name: 'Aixada',
+    name: "Fira de l'Aixada",
     date: '13 de maig de 2024',
-    inscriptionsDate: "Inscripcions: 1 - 30 d'abril",
+    inscriptionsDate: 'Inscripcions: Properament',
     imageUrl: '/assets/images/aixada.png',
+    location: 'Manresa',
+    rating: 4.6,
+    tags: ['Històrica', 'Familiar'],
+    isFavorite: true,
   },
 ];
 
+const ITEM_WIDTH = 210;
+const GAP = 24;
+const ITEMS_PER_VIEW = 3; // Mostrar siempre 3 elementos
+
 const NextInscriptionsCard: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [itemsPerView, setItemsPerView] = useState(1);
-  const cardRef = useRef<HTMLDivElement>(null);
+  const [fairs, setFairs] = useState<Fair[]>(initialMockFairs);
 
-  useEffect(() => {
-    const calculateItemsPerView = () => {
-      if (cardRef.current) {
-        const containerWidth = cardRef.current.offsetWidth;
-        const itemWidth = 210; // Base width per item
-        const calculatedItems = Math.floor(containerWidth / itemWidth);
-        const newItemsPerView = Math.max(1, calculatedItems);
-
-        setItemsPerView(newItemsPerView);
-        // Asegurarse de que el currentIndex es válido con el nuevo itemsPerView
-        setCurrentIndex((prev) => Math.min(prev, mockFairs.length - newItemsPerView));
-      }
-    };
-
-    calculateItemsPerView();
-    window.addEventListener('resize', calculateItemsPerView);
-
-    return () => {
-      window.removeEventListener('resize', calculateItemsPerView);
-    };
-  }, []);
-
-  const totalItems = mockFairs.length;
-  const maxIndex = Math.max(0, totalItems - itemsPerView);
+  const totalItems = fairs.length;
+  const maxIndex = Math.max(0, totalItems - ITEMS_PER_VIEW); // Índice máximo basado en 3 visibles
 
   const handlePrevious = () => {
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
@@ -86,10 +91,31 @@ const NextInscriptionsCard: React.FC = () => {
     setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
   };
 
-  const visibleFairs = mockFairs.slice(currentIndex, currentIndex + itemsPerView);
+  const handleToggleFavorite = (id: string) => {
+    setFairs((currentFairs) =>
+      currentFairs.map((fair) =>
+        fair.id === id ? { ...fair, isFavorite: !fair.isFavorite } : fair
+      )
+    );
+    console.log(`Toggled favorite for fair ID: ${id}`);
+  };
+
+  const renderStars = (rating: number) => {
+    const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 >= 0.5;
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+    for (let i = 0; i < fullStars; i++) stars.push(<StarIcon key={`full-${i}`} filled={true} />);
+    if (hasHalfStar) stars.push(<StarIcon key="half" filled={true} />);
+    for (let i = 0; i < emptyStars; i++) stars.push(<StarIcon key={`empty-${i}`} filled={false} />);
+    return stars;
+  };
+
+  const translateX = currentIndex * (ITEM_WIDTH + GAP);
 
   return (
-    <div className={styles.nextInscriptionsCard} ref={cardRef}>
+    <div className={styles.nextInscriptionsCard}>
       <div className={styles.header}>
         <h3>Obertura properes inscripcions</h3>
         <button className={styles.viewAllButton}>Veure-les totes</button>
@@ -99,7 +125,7 @@ const NextInscriptionsCard: React.FC = () => {
           <button
             className={`${styles.carouselButton} ${styles.prevButton}`}
             onClick={handlePrevious}
-            aria-label="Previous images"
+            aria-label="Previous fairs"
           >
             ‹
           </button>
@@ -108,21 +134,42 @@ const NextInscriptionsCard: React.FC = () => {
           <div
             className={styles.fairsList}
             style={{
-              transform: `translateX(calc(-${currentIndex * (100 / itemsPerView)}%))`,
+              transform: `translateX(-${translateX}px)`,
+              width: `${totalItems * ITEM_WIDTH + (totalItems - 1) * GAP}px`,
             }}
           >
-            {mockFairs.map((fair) => (
-              <div
-                key={fair.id}
-                className={styles.fairItem}
-                style={{
-                  width: `calc(${100 / itemsPerView}% - ${
-                    (24 * (itemsPerView - 1)) / itemsPerView
-                  }px)`,
-                }}
-              >
+            {fairs.map((fair) => (
+              <div key={fair.id} className={styles.fairItem}>
                 <div className={styles.imageContainer}>
                   <img src={fair.imageUrl} alt={fair.name} className={styles.fairImage} />
+                  <button
+                    className={`${styles.favoriteButton} ${
+                      fair.isFavorite ? styles.favoriteActive : ''
+                    }`}
+                    onClick={() => handleToggleFavorite(fair.id)}
+                    aria-label={fair.isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+                  >
+                    <HeartIcon filled={fair.isFavorite} />
+                  </button>
+                </div>
+                <div className={styles.fairInfo}>
+                  <h4 className={styles.fairName}>{fair.name}</h4>
+                  <div className={styles.ratingContainer}>
+                    <div className={styles.stars}> {renderStars(fair.rating)} </div>
+                    <span className={styles.ratingValue}>{fair.rating.toFixed(1)}</span>
+                  </div>
+                  <p className={styles.location}>
+                    <LocationIcon /> {fair.location}
+                  </p>
+                  <div className={styles.tagsContainer}>
+                    {fair.tags.map((tag) => (
+                      <span key={tag} className={styles.tag}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <p className={styles.fairDate}>{fair.date}</p>
+                  <p className={styles.inscriptionsDate}>{fair.inscriptionsDate}</p>
                 </div>
               </div>
             ))}
@@ -132,7 +179,7 @@ const NextInscriptionsCard: React.FC = () => {
           <button
             className={`${styles.carouselButton} ${styles.nextButton}`}
             onClick={handleNext}
-            aria-label="Next images"
+            aria-label="Next fairs"
           >
             ›
           </button>

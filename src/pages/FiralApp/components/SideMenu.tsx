@@ -1,5 +1,7 @@
 import React from 'react';
-import '../styles/SideMenu.css';
+import { NavLink } from 'react-router-dom';
+import styles from '../styles/SideMenu.module.css';
+import firalLogoImage from '../../../assets/images/logo.png';
 import {
   SearchIcon,
   DashboardIcon,
@@ -14,71 +16,98 @@ import {
   SettingsIcon,
 } from './icons';
 
-const SideMenu: React.FC = () => {
-  return (
-    <aside className="side-menu">
-      <div className="logo-container">
-        <img src="/assets/fira-logo.svg" alt="Fira App" className="logo" />
-      </div>
+const FiralLogo = () => (
+  <div className={styles.logoContainer}>
+    <img src={firalLogoImage} alt="Fira App Logo" className={styles.logo} />
+  </div>
+);
 
-      <div className="search-container">
-        <input type="text" placeholder="Buscar" className="search-input" />
-        <div className="search-icon">
+const SideMenu: React.FC = () => {
+  const getNavLinkClass = ({ isActive }: { isActive: boolean }) =>
+    isActive ? `${styles.menuItem} ${styles.active}` : styles.menuItem;
+
+  return (
+    <aside className={styles.sideMenu}>
+      <FiralLogo />
+
+      <div className={styles.searchContainer}>
+        <input type="text" placeholder="Buscar" className={styles.searchInput} />
+        <div className={styles.searchIcon}>
           <SearchIcon />
         </div>
       </div>
 
-      <div className="menu-section">
-        <h3 className="menu-label">MAIN</h3>
-        <ul className="menu-items">
-          <li className="menu-item active">
-            <DashboardIcon fill="#6A28FC" />
-            <span>Dashboard</span>
+      <nav className={styles.menuSection}>
+        <h3 className={styles.menuLabel}>MAIN</h3>
+        <ul className={styles.menuItems}>
+          <li>
+            <NavLink to="/dashboard" className={getNavLinkClass} end>
+              <DashboardIcon />
+              <span>Dashboard</span>
+            </NavLink>
           </li>
-          <li className="menu-item">
-            <CalendarIcon />
-            <span>Calendari</span>
+          <li>
+            <NavLink to="/dashboard/calendar" className={getNavLinkClass}>
+              <CalendarIcon />
+              <span>Calendari</span>
+            </NavLink>
           </li>
-          <li className="menu-item">
-            <PersonIcon />
-            <span>Sol·licituds</span>
+          <li>
+            <NavLink to="/dashboard/requests" className={getNavLinkClass}>
+              <PersonIcon />
+              <span>Sol·licituds</span>
+            </NavLink>
           </li>
-          <li className="menu-item">
-            <StorefrontIcon />
-            <span>La meva parada</span>
+          <li>
+            <NavLink to="/dashboard/my-stall" className={getNavLinkClass}>
+              <StorefrontIcon />
+              <span>La meva parada</span>
+            </NavLink>
           </li>
-          <li className="menu-item">
-            <CreditCardIcon />
-            <span>Pagaments</span>
+          <li>
+            <NavLink to="/dashboard/payments" className={getNavLinkClass}>
+              <CreditCardIcon />
+              <span>Pagaments</span>
+            </NavLink>
           </li>
-          <li className="menu-item">
-            <MessageIcon />
-            <span>Comunicacions</span>
+          <li>
+            <NavLink to="/dashboard/communications" className={getNavLinkClass}>
+              <MessageIcon />
+              <span>Comunicacions</span>
+            </NavLink>
           </li>
-          <li className="menu-item">
-            <StarIcon outline={true} />
-            <span>Valoracions</span>
+          <li>
+            <NavLink to="/dashboard/ratings" className={getNavLinkClass}>
+              <StarIcon filled={false} />
+              <span>Valoracions</span>
+            </NavLink>
           </li>
-          <li className="menu-item">
-            <WeatherIcon />
-            <span>Meteorologia</span>
+          <li>
+            <NavLink to="/dashboard/weather" className={getNavLinkClass}>
+              <WeatherIcon />
+              <span>Meteorologia</span>
+            </NavLink>
           </li>
         </ul>
-      </div>
+      </nav>
 
-      <div className="menu-section">
-        <h3 className="menu-label">SUPORT</h3>
-        <ul className="menu-items">
-          <li className="menu-item">
-            <HelpIcon />
-            <span>Ajuda</span>
+      <nav className={styles.menuSection}>
+        <h3 className={styles.menuLabel}>SUPORT</h3>
+        <ul className={styles.menuItems}>
+          <li>
+            <NavLink to="/dashboard/help" className={getNavLinkClass}>
+              <HelpIcon />
+              <span>Ajuda</span>
+            </NavLink>
           </li>
-          <li className="menu-item">
-            <SettingsIcon />
-            <span>Preferències</span>
+          <li>
+            <NavLink to="/dashboard/preferences" className={getNavLinkClass}>
+              <SettingsIcon />
+              <span>Preferències</span>
+            </NavLink>
           </li>
         </ul>
-      </div>
+      </nav>
     </aside>
   );
 };

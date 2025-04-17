@@ -1,3 +1,4 @@
+/* RequestsTable.module.css */
 .card {
   background-color: #ffffff;
   border: 1px solid #dddddc;
@@ -22,8 +23,15 @@
   margin: 0;
 }
 
+.subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #686868;
+  margin: 0;
+}
+
 .viewAll {
-  background: none;
+  background: transparent;
   border: none;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -34,92 +42,88 @@
   padding: 0;
 }
 
-.subtitle {
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid #dddddc;
+  text-align: left;
+}
+
+.table th {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #686868;
+}
+
+.table td {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  color: #686868;
-  margin: 0;
+  color: #333333;
+  vertical-align: middle;
 }
 
-.list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.item {
+.fairCell {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
-.avatar {
+.logoCell {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   overflow: hidden;
-  flex-shrink: 0;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.avatar img {
+.logo {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.content {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.meta {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.sender {
+.fairName {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: #1c1c1e;
 }
 
-.date {
+.dateCell {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   color: #686868;
 }
 
-.previewContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
+.statusCell {
+  /*  display: flex; */
+  align-items: center;
   gap: 8px;
 }
 
-.preview {
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  color: #686868;
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
 }
 
-.badge {
-  background-color: #6a28fc;
-  color: #ffffff;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.statusText {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  color: #1c1c1e;
 }

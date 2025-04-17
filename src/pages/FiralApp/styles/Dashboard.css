@@ -131,3 +131,17 @@
     grid-column: span 4;
   }
 }
+
+/* Two-column layout for remaining-content */
+.dashboard-two-columns {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 24px;
+}
+
+.dashboard-two-columns .left-column,
+.dashboard-two-columns .right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

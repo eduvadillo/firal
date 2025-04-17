@@ -1,0 +1,155 @@
+/* DetailedWeatherCard.module.css */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #dddddc;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #1c1c1e;
+  margin: 0;
+}
+
+.dateSelector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chevron {
+  font-size: 16px;
+  color: #686868;
+}
+
+.instructions {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #686868;
+  margin: 0;
+}
+
+.mainBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.iconTemp {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.iconTemp .icon {
+  font-size: 48px;
+  color: #6a28fc;
+}
+
+.temp {
+  font-family: 'Inter', sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  color: #1c1c1e;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #686868;
+}
+
+.divider {
+  width: 1px;
+  height: 80px;
+  background-color: #dddddc;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #686868;
+}
+
+.sectionLabel {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #686868;
+  margin: 0;
+}
+
+.timeLabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1c1c1e;
+  margin: 0;
+}
+
+.condition {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #686868;
+  margin: 0;
+}
+
+.forecast {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.forecastDay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.day {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #686868;
+}
+
+.forecastIcon {
+  font-size: 24px;
+  color: #6a28fc;
+}
+
+.maxMin {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #686868;
+}

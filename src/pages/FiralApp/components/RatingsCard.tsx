@@ -32,21 +32,17 @@ const RatingsCard: React.FC = () => {
   ];
 
   const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, index) => (
-      <StarIcon
-        key={index}
-        fill={index < rating ? '#FFB800' : '#E0E0E0'}
-        outline={false}
-        width={16}
-        height={16}
-      />
-    ));
+    const stars = [];
+    for (let index = 0; index < 5; index++) {
+      stars.push(<StarIcon key={index} filled={index < rating} />);
+    }
+    return stars;
   };
 
   return (
     <div className="ratings-card">
       <div className="ratings-header">
-        <StarIcon fill="#6A28FC" />
+        <StarIcon filled={true} />
         <h3>Valoracions i feedback</h3>
       </div>
       <div className="ratings-subheader">
@@ -66,6 +62,11 @@ const RatingsCard: React.FC = () => {
             <p className="rating-comment">{rating.comment}</p>
           </div>
         ))}
+      </div>
+      <div className="rating-summary">
+        <div className="stars-container">{renderStars(4.5)}</div>
+        <span className="rating-value">4.5</span>
+        <span className="rating-count">(12 opinions)</span>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
   background-color: #ffffff;
   border: 1px solid #dddddc;
   border-radius: 8px;
-  overflow: hidden;
+  /*  overflow: hidden; */
 }
 
 .inscriptions-card-content {
