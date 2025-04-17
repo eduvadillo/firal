@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header';
-import SideMenu from './SideMenu';
 import CountdownCard from './CountdownCard';
 import PolicyReminder from './PolicyReminder';
 import NewMessages from './NewMessages';
@@ -104,7 +103,6 @@ const Dashboard: React.FC = () => {
               <PolicyReminder />
               <NewMessages messages={mockMessages} />
             </div>
-            {/* Figma Group 2795: two-column section */}
             <div className="dashboard-section">
               <div className="dashboard-section inscriptions-section">
                 <FairsCarousel fairs={initialMockFairs} />
@@ -114,32 +112,15 @@ const Dashboard: React.FC = () => {
                 <div className="left-column">
                   <InscriptionsCard />
                   <CommunicationsCard />
-                  {/*  <RatingsCard /> */}
                   <RatingsTable />
                 </div>
                 <div className="right-column">
-                  {/*   <WeatherCard /> */}
                   <DetailedWeatherCard />
                   <RequestsTable />
                   <PaymentsHistoryTable />
-                  {/*   <ApplicationsTable />
-                  <PaymentsTable /> */}
-                  {/* Ratings section from Figma Group 2707 */}
                 </div>
               </div>
             </div>
-
-            {/* Figma Group 2744: Obertura properes inscripcions */}
-            {/*   <div className="dashboard-section inscriptions-section">
-              <NextInscriptionsCard />
-            </div> */}
-
-            {/* Fairs list carousel */}
-
-            {/* FairCarousel Section */}
-            {/*   <div className="dashboard-section">
-              <FairCarousel />
-            </div> */}
           </div>
         </div>
       </div>

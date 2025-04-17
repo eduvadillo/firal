@@ -15,6 +15,8 @@ import {
   HelpIcon,
   SettingsIcon,
 } from './icons';
+import { FiFlag } from 'react-icons/fi';
+import SideMenuItem from './SideMenuItem';
 
 const FiralLogo = () => (
   <div className={styles.logoContainer}>
@@ -40,72 +42,35 @@ const SideMenu: React.FC = () => {
       <nav className={styles.menuSection}>
         <h3 className={styles.menuLabel}>MAIN</h3>
         <ul className={styles.menuItems}>
-          <li>
-            <NavLink to="/dashboard" className={getNavLinkClass} end>
-              <DashboardIcon />
-              <span>Dashboard</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/calendar" className={getNavLinkClass}>
-              <CalendarIcon />
-              <span>Calendari</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/requests" className={getNavLinkClass}>
-              <PersonIcon />
-              <span>Sol·licituds</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/my-stall" className={getNavLinkClass}>
-              <StorefrontIcon />
-              <span>La meva parada</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/payments" className={getNavLinkClass}>
-              <CreditCardIcon />
-              <span>Pagaments</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/communications" className={getNavLinkClass}>
-              <MessageIcon />
-              <span>Comunicacions</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/ratings" className={getNavLinkClass}>
-              <StarIcon filled={false} />
-              <span>Valoracions</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/weather" className={getNavLinkClass}>
-              <WeatherIcon />
-              <span>Meteorologia</span>
-            </NavLink>
-          </li>
+          <SideMenuItem to="/dashboard" icon={<DashboardIcon />} label="Dashboard" exact />
+          <SideMenuItem
+            to="/dashboard/fires"
+            icon={<FiFlag className={styles.menuIcon} />}
+            label="Fires"
+          />
+          <SideMenuItem to="/dashboard/calendar" icon={<CalendarIcon />} label="Calendari" />
+          <SideMenuItem to="/dashboard/requests" icon={<PersonIcon />} label="Sol·licituds" />
+          <SideMenuItem to="/dashboard/my-stall" icon={<StorefrontIcon />} label="La meva parada" />
+          <SideMenuItem to="/dashboard/payments" icon={<CreditCardIcon />} label="Pagaments" />
+          <SideMenuItem
+            to="/dashboard/communications"
+            icon={<MessageIcon />}
+            label="Comunicacions"
+          />
+          <SideMenuItem
+            to="/dashboard/ratings"
+            icon={<StarIcon filled={false} />}
+            label="Valoracions"
+          />
+          <SideMenuItem to="/dashboard/weather" icon={<WeatherIcon />} label="Meteorologia" />
         </ul>
       </nav>
 
       <nav className={styles.menuSection}>
         <h3 className={styles.menuLabel}>SUPORT</h3>
         <ul className={styles.menuItems}>
-          <li>
-            <NavLink to="/dashboard/help" className={getNavLinkClass}>
-              <HelpIcon />
-              <span>Ajuda</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/preferences" className={getNavLinkClass}>
-              <SettingsIcon />
-              <span>Preferències</span>
-            </NavLink>
-          </li>
+          <SideMenuItem to="/dashboard/help" icon={<HelpIcon />} label="Ajuda" />
+          <SideMenuItem to="/dashboard/preferences" icon={<SettingsIcon />} label="Preferències" />
         </ul>
       </nav>
     </aside>
