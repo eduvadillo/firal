@@ -1,0 +1,96 @@
+/* src/pages/FiralApp/laMevaParada/styles/MetodePagament.module.css */
+.container {
+  background-color: #ffffff;
+  border: 1px solid #dddddc;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1c1c1e;
+  margin: 0;
+}
+
+.description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #686868;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.subDescription {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #686868;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #dddddc;
+  border-radius: 8px;
+  padding: 16px;
+  gap: 16px;
+}
+
+.cardLogo {
+  flex-shrink: 0;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.cardNumber {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1c1c1e;
+}
+
+.cardExpiry {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #686868;
+}
+
+.cardEdit {
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.chevronDown {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.primaryButton {
+  padding: 10px 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #6a28fc;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

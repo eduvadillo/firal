@@ -59,6 +59,10 @@
   margin-bottom: 30px;
 }
 
+.menuSection:last-child {
+  margin-bottom: 0;
+}
+
 .menuLabel {
   font-family: 'Roboto', sans-serif; /* Using Roboto as defined elsewhere */
   font-size: 12px;

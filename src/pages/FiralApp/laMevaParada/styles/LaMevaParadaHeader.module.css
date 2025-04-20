@@ -1,0 +1,23 @@
+/* src/pages/FiralApp/laMevaParada/styles/LaMevaParadaHeader.module.css */
+.container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1c1c1e;
+  margin: 0;
+}
+
+.description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #686868;
+  margin: 0;
+  line-height: 1;
+}

@@ -1,0 +1,49 @@
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.chips {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.chip {
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.chipActive {
+  background-color: #e2d7ff;
+  color: #374151;
+}
+
+.filterButton {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  color: #374151;
+  font-size: 0.85rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+}
+
+.icon {
+  margin-left: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  fill: #6b7280;
+}

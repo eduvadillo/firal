@@ -13,7 +13,7 @@
 .main-content {
   flex: 1; /* Hace que esta área ocupe el espacio restante al lado del SideMenu */
   overflow-y: auto; /* Habilita el scroll vertical si el contenido es más alto que el área visible */
-  background-color: #f9f9f9; /* Un fondo ligeramente gris para diferenciar del SideMenu blanco */
+  background-color: #ffffff; /* Un fondo ligeramente gris para diferenciar del SideMenu blanco */
   /* Considera añadir padding aquí o dentro del componente Header/Dashboard si es necesario */
   /* padding: 24px; */
 }

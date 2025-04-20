@@ -1,0 +1,24 @@
+/* src/pages/FiralApp/Fira/styles/Fira.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sectionContainer {
+  display: flex;
+  gap: 24px;
+  padding: 1rem;
+}
+
+.ratingsWrapper {
+  flex: 0 0 35%;
+}
+
+.reviewsWrapper {
+  flex: 0 0 62%;
+}
+
+.nextFairCards {
+  padding: 1rem;
+}

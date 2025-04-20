@@ -50,7 +50,11 @@ const SideMenu: React.FC = () => {
           />
           <SideMenuItem to="/dashboard/calendar" icon={<CalendarIcon />} label="Calendari" />
           <SideMenuItem to="/dashboard/requests" icon={<PersonIcon />} label="Sol·licituds" />
-          <SideMenuItem to="/dashboard/my-stall" icon={<StorefrontIcon />} label="La meva parada" />
+          <SideMenuItem
+            to="/dashboard/lamevaparada"
+            icon={<StorefrontIcon />}
+            label="La meva parada"
+          />
           <SideMenuItem to="/dashboard/payments" icon={<CreditCardIcon />} label="Pagaments" />
           <SideMenuItem
             to="/dashboard/communications"

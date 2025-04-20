@@ -1,0 +1,20 @@
+/* src/pages/FiralApp/laMevaParada/styles/LamevaParada.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 1rem;
+}
+
+.content {
+  display: flex;
+  gap: 24px;
+}
+
+.sidebar {
+  flex: 0 0 260px;
+}
+
+.main {
+  flex: 1;
+}

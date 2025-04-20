@@ -1,0 +1,37 @@
+.gallery {
+  display: grid;
+  grid-template-areas:
+    'main thumb1 thumb2'
+    'main thumb3 thumb4';
+  gap: 8px;
+  padding: 1rem;
+}
+
+.main {
+  grid-area: main;
+  display: flex;
+}
+
+.thumb1 {
+  grid-area: thumb1;
+}
+
+.thumb2 {
+  grid-area: thumb2;
+}
+
+.thumb3 {
+  grid-area: thumb3;
+}
+
+.thumb4 {
+  grid-area: thumb4;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 4px;
+}

@@ -1,0 +1,109 @@
+/* src/pages/FiralApp/laMevaParada/styles/DadesFiscals.module.css */
+.container {
+  background-color: #ffffff;
+  border: 1px solid #dddddc;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1c1c1e;
+  margin: 0;
+}
+
+.description,
+.subDescription {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #686868;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.subTitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1c1c1e;
+  margin: 16px 0 8px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1c1c1e;
+}
+
+.input,
+.select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #dddddc;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #1c1c1e;
+  background-color: #ffffff;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #1c1c1e;
+}
+
+.optionsGroup {
+  display: flex;
+  gap: 8px;
+}
+
+.option {
+  flex: 1;
+  padding: 8px 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #dddddc;
+  border-radius: 4px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.primaryButton {
+  padding: 10px 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #6a28fc;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

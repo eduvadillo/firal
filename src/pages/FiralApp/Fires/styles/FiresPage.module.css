@@ -1,0 +1,9 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem; /* 32px padding on all sides */
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff; /* white page background */
+  gap: 1.5rem; /* uniform vertical spacing of 24px between sections */
+}
