@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './styles/PolicyReminder.module.css';
 
 const PolicyReminder: React.FC = () => {
@@ -18,9 +19,11 @@ const PolicyReminder: React.FC = () => {
           És necessari que adjuntis nova pòlissa ja que l’anterior va caducar fa un parell de
           setmanes
         </p>
-        <button className={styles.uploadButton} onClick={handleUpload}>
-          Ves a la meva parada
-        </button>
+        <Link to={`/dashboard/lamevaparada`}>
+          <button className={styles.uploadButton} onClick={handleUpload}>
+            Ves a la meva parada
+          </button>
+        </Link>
       </div>
     </div>
   );
