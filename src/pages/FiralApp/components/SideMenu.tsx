@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from '../styles/SideMenu.module.css';
-import firalLogoImage from '../../../assets/images/logo.png';
+import firalLogoImage from '../../../assets/images/logoDashboard.png';
 import {
   SearchIcon,
   DashboardIcon,
