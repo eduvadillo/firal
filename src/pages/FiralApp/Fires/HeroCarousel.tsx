@@ -1,4 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './styles/HeroCarousel.module.css';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 // Import feature images for carousel
@@ -28,7 +29,7 @@ const mockSlides: Slide[] = [
   },
   {
     id: '3',
-    title: 'Fires amb Food Trucks',
+    title: 'Fira Candelaria',
     subtitle: '3,5/5 - Dates per confirmar',
     imageUrl: feature3,
   },
@@ -60,11 +61,13 @@ const HeroCarousel: FC = () => {
           style={{ backgroundImage: `url(${slide.imageUrl})` }}
         >
           {idx === current && (
-            <div className={styles.content}>
-              <h2 className={styles.title}>{slide.title}</h2>
-              <p className={styles.subtitle}>{slide.subtitle}</p>
-              <button className={styles.cta}>Veure ara</button>
-            </div>
+            <Link to={`/dashboard/fires/${slide.title}`} className={styles.titleLink}>
+              <div className={styles.content}>
+                <h2 className={styles.title}>{slide.title}</h2>
+                <p className={styles.subtitle}>{slide.subtitle}</p>
+                <button className={styles.cta}>Veure ara</button>
+              </div>
+            </Link>
           )}
         </div>
       ))}

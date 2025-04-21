@@ -33,7 +33,7 @@ const NewMessages: React.FC<NewMessagesProps> = ({ messages }) => {
           </div>
         ))}
       </div>
-      <button className={styles.viewAllButton}>Veure tots els missatges</button>
+      <button className={styles.viewAllButton}>Ves a comunicacions</button>
     </div>
   );
 };

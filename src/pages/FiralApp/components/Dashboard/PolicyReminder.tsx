@@ -1,6 +1,5 @@
 import React from 'react';
-import { StorefrontIcon } from '../icons';
-import './styles/PolicyReminder.css';
+import styles from './styles/PolicyReminder.module.css';
 
 const PolicyReminder: React.FC = () => {
   const handleUpload = () => {
@@ -9,18 +8,18 @@ const PolicyReminder: React.FC = () => {
   };
 
   return (
-    <div className="policy-reminder">
-      <div className="reminder-header">
-        <StorefrontIcon fill="#6A28FC" />
+    <div className={styles.policyReminder}>
+      <div className={styles.reminderHeader}>
+        <div className={styles.unreadIndicator} />
         <h3>Recorda adjuntar pòlissa</h3>
       </div>
-      <div className="reminder-content">
+      <div className={styles.reminderContent}>
         <p>
           És necessari que adjuntis nova pòlissa ja que l’anterior va caducar fa un parell de
           setmanes
         </p>
-        <button className="upload-button" onClick={handleUpload}>
-          Adjuntar pòlissa
+        <button className={styles.uploadButton} onClick={handleUpload}>
+          Ves a la meva parada
         </button>
       </div>
     </div>

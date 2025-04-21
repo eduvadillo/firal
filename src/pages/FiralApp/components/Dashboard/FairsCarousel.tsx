@@ -1,5 +1,6 @@
 // FairsCarousel.tsx
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './styles/FairsCarousel.module.css';
 import { HeartIcon } from '../icons';
 
@@ -65,7 +66,9 @@ const FairsCarousel: React.FC<Props> = ({ fairs }) => {
             <div key={fair.id} className={styles.card}>
               {/* Image container with favorite overlay */}
               <div className={styles.imageContainer}>
-                <img src={fair.imageUrl} alt={fair.name} className={styles.image} />
+                <Link to={`/dashboard/fires/${fair.name}`} className={styles.titleLink}>
+                  <img src={fair.imageUrl} alt={fair.name} className={styles.image} />
+                </Link>
                 <button
                   className={`${styles.favoriteButton} ${
                     fair.isFavorite ? styles.favoriteActive : ''
@@ -78,7 +81,9 @@ const FairsCarousel: React.FC<Props> = ({ fairs }) => {
               </div>
               {/* Card content */}
               <div className={styles.wrapperNameDate}>
-                <h3 className={styles.name}>{fair.name}</h3>{' '}
+                <Link to={`/dashboard/fires/${fair.name}`} className={styles.titleLink}>
+                  <h3 className={styles.name}>{fair.name}</h3>{' '}
+                </Link>
                 <p className={styles.date}>{fair.rating}</p>
               </div>
               <p className={styles.date}>{fair.stallType}</p>

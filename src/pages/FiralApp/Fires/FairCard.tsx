@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles/FairCard.module.css';
 import { HeartIcon } from '../components/icons';
@@ -18,37 +18,52 @@ interface FairCardProps {
   fair: Fair;
 }
 
-const FairCard: FC<FairCardProps> = ({ fair }) => (
-  <div className={styles.card}>
-    <div className={styles.imageContainer}>
-      <img src={fair.imageUrl} alt={fair.name} className={styles.image} />
-      <HeartIcon filled={false} className={styles.heart} />
-    </div>
-    <div className={styles.content}>
-      <h4 className={styles.name}>
+const FairCard: FC<FairCardProps> = ({ fair }) => {
+  const [isFavorite, setIsFavorite] = useState<boolean>(false);
+  const handleToggleFavorite = () => {
+    setIsFavorite((current) => !current);
+  };
+
+  return (
+    <div className={styles.card}>
+      <div className={styles.imageContainer}>
         <Link to={`/dashboard/fires/${fair.name}`} className={styles.titleLink}>
-          <div className={styles.titleRating}>
-            {fair.name} <span className={styles.rating}>{fair.rating.toFixed(1)}</span>
-          </div>
+          <img src={fair.imageUrl} alt={fair.name} className={styles.image} />
         </Link>
-      </h4>
-      <p className={styles.category}>{fair.category}</p>
-      <div className={styles.info}>
-        <span className={styles.date}>{fair.date}</span>
+        <button
+          className={`${styles.favoriteButton} ${isFavorite ? styles.favoriteActive : ''}`}
+          onClick={handleToggleFavorite}
+          aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+        >
+          <HeartIcon filled={isFavorite} />
+        </button>
       </div>
-      <div className={styles.info}>
-        <span className={styles.location}>{fair.location}</span>
+      <div className={styles.content}>
+        <h4 className={styles.name}>
+          <Link to={`/dashboard/fires/${fair.name}`} className={styles.titleLink}>
+            <div className={styles.titleRating}>
+              {fair.name} <span className={styles.rating}>{fair.rating.toFixed(1)}</span>
+            </div>
+          </Link>
+        </h4>
+        <p className={styles.category}>{fair.category}</p>
+        <div className={styles.info}>
+          <span className={styles.date}>{fair.date}</span>
+        </div>
+        <div className={styles.info}>
+          <span className={styles.location}>{fair.location}</span>
+        </div>
+      </div>
+      <div className={styles.tagsContainer}>
+        {fair.tags.map((tag) => (
+          <span key={tag} className={styles.tag}>
+            {tag}
+          </span>
+        ))}
       </div>
     </div>
-    <div className={styles.tagsContainer}>
-      {fair.tags.map((tag) => (
-        <span key={tag} className={styles.tag}>
-          {tag}
-        </span>
-      ))}
-    </div>
-  </div>
-);
+  );
+};
 
 export const mockFairs: Fair[] = [
   {

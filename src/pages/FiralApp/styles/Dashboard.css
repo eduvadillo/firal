@@ -31,13 +31,14 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   padding: 24px;
-  background: #f8f8f8;
+  background: #e2d7ff33;
+  border: 1px solid #dddddc;
   border-radius: 16px;
 }
 
 .dashboard-section {
-  padding: 24px;
-  background: #f8f8f8;
+  padding: 0px 0px 24px 0px;
+  /* background: #f8f8f8; */
   border-radius: 16px;
 }
 
@@ -135,7 +136,7 @@
 /* Two-column layout for remaining-content */
 .dashboard-two-columns {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 40% 58%;
   gap: 24px;
 }
 

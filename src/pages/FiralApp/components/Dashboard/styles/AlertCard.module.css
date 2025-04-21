@@ -25,9 +25,9 @@
 
 .alert-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
 }
 
 .days-container {
@@ -54,7 +54,6 @@
 .fair-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   gap: 4px;
 }
 

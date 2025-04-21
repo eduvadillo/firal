@@ -35,7 +35,7 @@ const Dashboard: React.FC = () => {
       name: 'Fira de la Candelera',
       date: '2 de febrer de 2024',
       inscriptionsDate: 'Inscripcions: 1 - 15 de gener',
-      imageUrl: '/assets/images/candalera.png',
+      imageUrl: '/assets/images/candelera.png',
       location: 'Molins de Rei',
       rating: 4.8,
       stallType: 'Gastronomia',

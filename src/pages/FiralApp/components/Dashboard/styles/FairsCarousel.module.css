@@ -1,9 +1,9 @@
 /* Header section (copied from NextInscriptionsCard) */
 .nextInscriptionsCard {
   background: #ffffff;
-  border-radius: 16px;
+  border: 1px solid #dddddc;
+  border-radius: 8px;
   padding: 24px;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.06);
   width: 100%;
 }
 

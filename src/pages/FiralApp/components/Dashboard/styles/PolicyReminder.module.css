@@ -1,38 +1,40 @@
-.policy-reminder {
+/* Converted to CSS Module with camelCase class names */
+.policyReminder {
+  width: 314px;
   background: #ffffff;
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-.reminder-header {
+.reminderHeader {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 16px;
 }
 
-.reminder-header h3 {
-  color: #333333;
-  font-size: 18px;
-  font-weight: 600;
+.reminderHeader h3 {
+  color: #2a2a2a;
+  font-size: 16px;
+  font-weight: 400;
   margin: 0;
 }
 
-.reminder-content {
+.reminderContent {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.reminder-content p {
+.reminderContent p {
   color: #686868;
   font-size: 12px;
   line-height: 1.5;
   margin: 0;
 }
 
-.upload-button {
+.uploadButton {
   border: none;
   background-color: #ffffff;
   font-size: 14px;
@@ -40,4 +42,13 @@
   cursor: pointer;
   width: fit-content;
   text-decoration: underline;
+}
+
+.unreadIndicator {
+  top: 50%;
+  right: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6a28fc;
 }

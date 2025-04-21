@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
-import fira from '../../../../assets/images/logo.png';
+import fira from '../../../../assets/images/logoDashboard.png';
 
 export const Header: React.FC = () => {
   return (
