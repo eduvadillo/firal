@@ -72,3 +72,34 @@
   color: #2a2a2a;
   margin: 0;
 }
+
+/* Add wrapper around icon and mobile days */
+.icon-wrapper {
+  /* visible on desktop */
+}
+.mobileDays {
+  display: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #2a2a2a;
+  line-height: 1;
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .alert-card {
+    flex-direction: row;
+  }
+
+  .icon-wrapper {
+    display: none;
+  }
+  .mobileDays {
+    display: block;
+  }
+
+  .days-container {
+    display: none;
+  }
+}

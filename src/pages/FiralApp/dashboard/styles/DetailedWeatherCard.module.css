@@ -156,6 +156,12 @@
 
 @media (max-width: 768px) {
   .card {
-    width: 370px;
+    width: 325px;
+  }
+  .temp {
+    font-size: 25px;
+  }
+  .header {
+    gap: 15px;
   }
 }

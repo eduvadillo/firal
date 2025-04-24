@@ -11,7 +11,10 @@ interface AlertCardProps {
 const AlertCard: React.FC<AlertCardProps> = ({ daysLeft, fairName, fairLocation }) => (
   <div className={styles['alert-card']}>
     <div className={styles['alert-header']}>
-      <StorefrontIcon fill="#6A28FC" />
+      <div className={styles['icon-wrapper']}>
+        <StorefrontIcon fill="#6A28FC" />
+      </div>
+      <span className={styles['mobileDays']}>{daysLeft}</span>
       <h3 className={styles['alert-title']}>Dies que falten per la propera fira</h3>
     </div>
 

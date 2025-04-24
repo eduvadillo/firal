@@ -150,4 +150,9 @@
   .dashboard-two-columns {
     grid-template-columns: 1fr;
   }
+
+  .top-cards {
+    gap: 5px;
+    padding: 5px;
+  }
 }
