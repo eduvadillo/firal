@@ -146,6 +146,10 @@
     grid-column: span 4;
   }
 
+  .dashboard-content {
+    padding: 16px;
+  }
+
   /* Make two-column section a single column on mobile */
   .dashboard-two-columns {
     grid-template-columns: 1fr;
