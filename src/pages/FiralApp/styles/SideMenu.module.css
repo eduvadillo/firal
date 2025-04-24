@@ -124,3 +124,69 @@
   stroke: #1c1c1e;
   fill: #1c1c1e;
 }
+
+/* Mobile menu toggle button */
+.mobileMenuButton {
+  display: flex;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+  border: 1px solid #dddddc;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1100;
+  color: #333;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.mobileMenuButton:hover {
+  background-color: #f5f5f5;
+  border-color: #ccc;
+}
+
+/* Desktop: keep existing sidebar open */
+
+@media (max-width: 768px) {
+  /* Hide sidebar by default */
+  .sideMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+  /* Show toggle button */
+  .mobileMenuButton {
+    display: flex;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    background-color: #ffffff;
+    border: 1px solid #dddddc;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1100;
+    color: #333;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  .mobileMenuButton:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+  }
+  /* When open, slide in sidebar */
+  .sideMenu.open {
+    transform: translateX(0);
+  }
+}

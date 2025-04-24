@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles/RatingsTable.module.css';
+import styles from '../styles/RatingsTable.module.css';
 import { StarIcon } from '../icons';
 
 interface Rating {
@@ -40,7 +40,7 @@ const RatingsTable: React.FC = () => {
         {mockRatings.map((item) => {
           const fullStars = Math.floor(item.rating);
           const stars = Array.from({ length: 5 }, (_, i) => (
-            <StarIcon key={i} filled={i < fullStars} />
+            <StarIcon key={i} outline={i < fullStars} />
           ));
           return (
             <div key={item.id} className={styles.row}>

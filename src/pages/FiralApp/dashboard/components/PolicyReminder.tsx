@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './styles/PolicyReminder.module.css';
+import styles from '../styles/PolicyReminder.module.css';
 
 const PolicyReminder: React.FC = () => {
   const handleUpload = () => {

@@ -137,3 +137,9 @@
 .calendar-dot.active {
   background-color: #6a28fc;
 }
+
+@media (max-width: 768px) {
+  .inscriptions-card {
+    width: 370px;
+  }
+}

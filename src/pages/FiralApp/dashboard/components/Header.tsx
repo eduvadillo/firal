@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { selectCurrentUser, logout } from '../../../../store/slices/authSlice';
 import avatarPlaceholder from '../../../../assets/images/profile-avatar.png';
-import './styles/Header.css';
+import '../styles/Header.css';
 import { NotificationIcon, SettingsIcon, ArrowDownIcon } from '../icons';
 
 const Header: React.FC = () => {

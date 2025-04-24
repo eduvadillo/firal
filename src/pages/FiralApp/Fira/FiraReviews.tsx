@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styles from './styles/FiraReviews.module.css';
 import profileAvatar from '../../../assets/images/profile-avatar.png';
-import SearchIcon from '../components/icons/SearchIcon';
-import StarIcon from '../components/icons/StarIcon';
+import SearchIcon from '../dashboard/icons/SearchIcon';
+import StarIcon from '../dashboard/icons/StarIcon';
 
 interface Review {
   id: string;

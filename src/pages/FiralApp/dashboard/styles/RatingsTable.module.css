@@ -117,3 +117,12 @@
   font-weight: 500;
   color: #1c1c1e;
 }
+
+@media (max-width: 768px) {
+  .card {
+    width: 370px;
+  }
+  .logoCell {
+    display: none;
+  }
+}

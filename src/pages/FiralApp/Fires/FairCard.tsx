@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles/FairCard.module.css';
-import { HeartIcon } from '../components/icons';
+import { HeartIcon } from '../dashboard/icons';
 
 export interface Fair {
   id: string;

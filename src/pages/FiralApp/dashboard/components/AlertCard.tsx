@@ -1,6 +1,6 @@
 import React from 'react';
 import { StorefrontIcon } from '../icons';
-import styles from './styles/AlertCard.module.css';
+import styles from '../styles/AlertCard.module.css';
 
 interface AlertCardProps {
   daysLeft: number;

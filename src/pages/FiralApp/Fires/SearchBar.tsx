@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FC } from 'react';
 import styles from './styles/SearchBar.module.css';
-import { SearchIcon } from '../components/icons';
+import { SearchIcon } from '../dashboard/icons';
 
 interface SearchBarProps {
   value: string;

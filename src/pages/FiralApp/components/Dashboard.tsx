@@ -1,21 +1,15 @@
 import React from 'react';
-import Header from './Dashboard/Header';
-import AlertCard from './Dashboard/AlertCard';
-import PolicyReminder from './Dashboard/PolicyReminder';
-import NewMessages from './Dashboard/NewMessages';
-import InscriptionsCard from './Dashboard/InscriptionsCard';
-import FairsCarousel from './Dashboard/FairsCarousel';
-import NextInscriptionsCard from './NextInscriptionsCard';
-import WeatherCard from './WeatherCard';
-import DetailedWeatherCard from './Dashboard/DetailedWeatherCard';
-import CommunicationsCard from './Dashboard/CommunicationsCard';
-import RatingsCard from './RatingsCard';
-import ApplicationsTable from './ApplicationsTable';
-import PaymentsTable from './PaymentsTable';
-import FairCarousel from './FairCarousel';
-import RequestsTable from './Dashboard/RequestsTable';
-import PaymentsHistoryTable from './Dashboard/PaymentsHistoryTable';
-import RatingsTable from './Dashboard/RatingsTable';
+import Header from '../dashboard/components/Header';
+import AlertCard from '../dashboard/components/AlertCard';
+import PolicyReminder from '../dashboard/components/PolicyReminder';
+import NewMessages from '../dashboard/components/NewMessages';
+import InscriptionsCard from '../dashboard/components/InscriptionsCard';
+import FairsCarousel from '../dashboard/components/FairsCarousel';
+import DetailedWeatherCard from '../dashboard/components/DetailedWeatherCard';
+import CommunicationsCard from '../dashboard/components/CommunicationsCard';
+import RequestsTable from '../dashboard/components/RequestsTable';
+import PaymentsHistoryTable from '../dashboard/components/PaymentsHistoryTable';
+import RatingsTable from '../dashboard/components/RatingsTable';
 import '../styles/Dashboard.css';
 
 const Dashboard: React.FC = () => {

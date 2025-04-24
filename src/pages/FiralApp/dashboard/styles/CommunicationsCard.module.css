@@ -123,3 +123,12 @@
   font-size: 14px;
   font-weight: 500;
 }
+
+@media (max-width: 768px) {
+  .card {
+    width: 370px;
+  }
+  .avatar {
+    display: none;
+  }
+}

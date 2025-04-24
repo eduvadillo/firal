@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles/PaymentsHistoryTable.module.css';
+import styles from '../styles/PaymentsHistoryTable.module.css';
 
 interface Transaction {
   id: string;
@@ -50,15 +50,21 @@ const PaymentsHistoryTable: React.FC = () => (
         <tbody>
           {mockTransactions.map((tx) => (
             <tr key={tx.id}>
-              <td className={styles.fairCell}>
+              <td className={styles.fairCell} data-label="Fira">
                 <div className={styles.logoCell}>
                   <img src={tx.fairLogo} alt={tx.fairName} className={styles.logo} />
                 </div>
                 <span className={styles.fairName}>{tx.fairName}</span>
               </td>
-              <td className={styles.concept}>{tx.concept}</td>
-              <td className={styles.dateCell}>{tx.paymentDate}</td>
-              <td className={styles.amount}>{tx.amount}</td>
+              <td className={styles.concept} data-label="Concepte">
+                {tx.concept}
+              </td>
+              <td className={styles.dateCell} data-label="Data pagament">
+                {tx.paymentDate}
+              </td>
+              <td className={styles.amount} data-label="Preu">
+                {tx.amount}
+              </td>
             </tr>
           ))}
         </tbody>

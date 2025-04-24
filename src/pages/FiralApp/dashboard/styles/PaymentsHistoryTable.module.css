@@ -124,3 +124,47 @@
   font-weight: 500;
   color: #333333;
 }
+
+@media (max-width: 768px) {
+  .card {
+    width: 370px;
+  }
+
+  .logoCell {
+    display: none;
+  }
+
+  .tableContainer {
+    overflow-x: visible;
+  }
+  /*   .table {
+    display: block;
+  } */
+  .table thead {
+    display: none;
+  }
+  .table tbody tr {
+    display: block;
+    margin-bottom: 16px;
+    /* border-bottom: 1px solid #dddddc; */
+    padding-bottom: 12px;
+  }
+  .table tbody tr:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+  }
+  .table td::before {
+    content: attr(data-label) ':';
+    font-weight: 500;
+    margin-right: 8px;
+    color: #686868;
+    flex-shrink: 0;
+  }
+}

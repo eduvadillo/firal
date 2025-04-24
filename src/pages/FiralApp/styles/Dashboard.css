@@ -120,19 +120,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  .dashboard-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .notifications-section,
-  .communications-ratings-section,
-  .applications-section,
-  .payments-section {
-    grid-column: span 4;
-  }
-}
-
 /* Two-column layout for remaining-content */
 .dashboard-two-columns {
   display: grid;
@@ -145,4 +132,22 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .notifications-section,
+  .communications-ratings-section,
+  .applications-section,
+  .payments-section {
+    grid-column: span 4;
+  }
+
+  /* Make two-column section a single column on mobile */
+  .dashboard-two-columns {
+    grid-template-columns: 1fr;
+  }
 }

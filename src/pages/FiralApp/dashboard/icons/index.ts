@@ -11,3 +11,4 @@ export { default as SettingsIcon } from './SettingsIcon';
 export { default as StarIcon } from './StarIcon';
 export { default as StorefrontIcon } from './StorefrontIcon';
 export { default as WeatherIcon } from './WeatherIcon';
+export { default as HeartIcon } from './HeartIcon';

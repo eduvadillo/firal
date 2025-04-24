@@ -1,7 +1,7 @@
 // FairsCarousel.tsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './styles/FairsCarousel.module.css';
+import styles from '../styles/FairsCarousel.module.css';
 import { HeartIcon } from '../icons';
 
 interface Fair {
@@ -21,12 +21,24 @@ interface Props {
   fairs: Fair[];
 }
 
-const ITEMS_PER_PAGE = 4;
+// Determine items per page based on viewport width
+// Mobile (<768px) shows 2 items, desktop shows 4
+// We'll dynamically adjust on resize
+// const ITEMS_PER_PAGE = 4;
 
 const FairsCarousel: React.FC<Props> = ({ fairs }) => {
   const [startIndex, setStartIndex] = useState(0);
   // Manage a local copy of fairs to handle favorite toggling
   const [localFairs, setLocalFairs] = useState<Fair[]>(fairs);
+  const [itemsPerPage, setItemsPerPage] = useState<number>(window.innerWidth < 768 ? 2 : 4);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(window.innerWidth < 768 ? 2 : 4);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleToggleFavorite = (id: string) => {
     setLocalFairs((current) =>
@@ -35,19 +47,19 @@ const FairsCarousel: React.FC<Props> = ({ fairs }) => {
   };
 
   const goPrev = () => {
-    setStartIndex(startIndex === 0 ? fairs.length - ITEMS_PER_PAGE : startIndex - ITEMS_PER_PAGE);
+    setStartIndex((prev) => (prev === 0 ? localFairs.length - itemsPerPage : prev - itemsPerPage));
   };
 
   const goNext = () => {
-    setStartIndex(startIndex + ITEMS_PER_PAGE >= fairs.length ? 0 : startIndex + ITEMS_PER_PAGE);
+    setStartIndex((prev) => (prev + itemsPerPage >= localFairs.length ? 0 : prev + itemsPerPage));
   };
 
-  // Elementos visibles (3) con wrap‑around
+  // Elementos visibles con wrap-around
   const visible = (() => {
-    const slice = localFairs.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-    return slice.length === ITEMS_PER_PAGE
+    const slice = localFairs.slice(startIndex, startIndex + itemsPerPage);
+    return slice.length === itemsPerPage
       ? slice
-      : slice.concat(localFairs.slice(0, ITEMS_PER_PAGE - slice.length));
+      : slice.concat(localFairs.slice(0, itemsPerPage - slice.length));
   })();
 
   return (

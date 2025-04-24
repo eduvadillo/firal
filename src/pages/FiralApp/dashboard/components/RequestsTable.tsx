@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles/RequestsTable.module.css';
+import styles from '../styles/RequestsTable.module.css';
 
 interface Request {
   id: string;
@@ -52,15 +52,19 @@ const RequestsTable: React.FC = () => {
           <tbody>
             {mockRequests.map((req) => (
               <tr key={req.id}>
-                <td className={styles.fairCell}>
+                <td className={styles.fairCell} data-label="Fira">
                   <div className={styles.logoCell}>
                     <img src={req.fairLogo} alt={req.fairName} className={styles.logo} />
                   </div>
                   <span className={styles.fairName}>{req.fairName}</span>
                 </td>
-                <td className={styles.dateCell}>{req.requestDate}</td>
-                <td className={styles.dateCell}>{req.fairDate}</td>
-                <td className={styles.statusCell}>
+                <td className={styles.dateCell} data-label="Data sol·licitud">
+                  {req.requestDate}
+                </td>
+                <td className={styles.dateCell} data-label="Data Fira">
+                  {req.fairDate}
+                </td>
+                <td className={styles.statusCell} data-label="Estat">
                   <span className={styles.statusDot} style={{ backgroundColor: '#fbbc05' }} />
                   <span className={styles.statusText}>{req.status}</span>
                 </td>

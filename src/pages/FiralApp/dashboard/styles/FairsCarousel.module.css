@@ -197,3 +197,10 @@
   border-radius: 4px;
   white-space: nowrap;
 }
+
+/* Mobile responsive: wrap carousel on mobile */
+@media (max-width: 768px) {
+  .carousel {
+    flex-wrap: wrap;
+  }
+}

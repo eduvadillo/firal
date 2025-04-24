@@ -153,3 +153,9 @@
   font-weight: 400;
   color: #686868;
 }
+
+@media (max-width: 768px) {
+  .card {
+    width: 370px;
+  }
+}

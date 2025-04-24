@@ -139,4 +139,15 @@
   .welcome-message p {
     font-size: 11px;
   }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-right: 1rem;
+  }
+
+  .user-profile {
+    margin-left: 0;
+  }
 }

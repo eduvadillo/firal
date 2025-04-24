@@ -4,11 +4,18 @@ interface SearchIconProps {
   fill?: string;
   width?: number;
   height?: number;
+  className?: string;
 }
 
-const SearchIcon: React.FC<SearchIconProps> = ({ fill = '#686868', width = 24, height = 24 }) => {
+const SearchIcon: React.FC<SearchIconProps> = ({
+  fill = '#686868',
+  width = 24,
+  height = 24,
+  className = '',
+}) => {
   return (
     <svg
+      className={className}
       width={width}
       height={height}
       viewBox="0 0 24 24"
