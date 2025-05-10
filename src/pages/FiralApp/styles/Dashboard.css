@@ -55,8 +55,7 @@
 }
 
 @media (max-width: 1200px) {
-  .top-cards,
-  .inscriptions-section {
+  .top-cards {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -134,7 +133,7 @@
   gap: 24px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .dashboard-grid {
     grid-template-columns: repeat(4, 1fr);
   }

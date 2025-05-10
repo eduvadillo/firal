@@ -127,7 +127,7 @@
 
 /* Mobile menu toggle button */
 .mobileMenuButton {
-  display: flex;
+  display: none;
   position: fixed;
   top: 16px;
   right: 16px;
@@ -152,7 +152,7 @@
 
 /* Desktop: keep existing sidebar open */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   /* Hide sidebar by default */
   .sideMenu {
     position: fixed;

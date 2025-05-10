@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.css';
-import firaPng from '../../../../assets/images/fira.png';
+import firaPng from '../../../../assets/images/logo.png';
 
 // Based on Figma Group 2832 (430:5645) and Line 76 (430:5658)
 
@@ -11,12 +11,14 @@ export const Footer: React.FC = () => {
         <div className={styles.content}>
           <img src={firaPng} alt="Firal Logo" className={styles.logo} />
           <div className={styles.social}>
-            <button
+            <a
+              href="https://www.instagram.com/firal.app"
+              target="_blank"
+              rel="noopener noreferrer"
               className={styles.socialLink}
-              onClick={() => window.open('https://www.instagram.com/firal.app', '_blank')}
             >
               Instagram
-            </button>
+            </a>
             <span className={styles.separation}>|</span>
             <p className={styles.copyright}>Firal 2025 ©</p>
           </div>

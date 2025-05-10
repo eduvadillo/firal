@@ -21,21 +21,21 @@ interface Props {
   fairs: Fair[];
 }
 
-// Determine items per page based on viewport width
-// Mobile (<768px) shows 2 items, desktop shows 4
-// We'll dynamically adjust on resize
-// const ITEMS_PER_PAGE = 4;
+// Determine items per page based on viewport width: mobile 2, tablet 3, desktop 4
+const getItemsPerPage = (width: number): number => {
+  if (width < 768) return 2;
+  if (width < 1024) return 3;
+  return 4;
+};
 
 const FairsCarousel: React.FC<Props> = ({ fairs }) => {
   const [startIndex, setStartIndex] = useState(0);
   // Manage a local copy of fairs to handle favorite toggling
   const [localFairs, setLocalFairs] = useState<Fair[]>(fairs);
-  const [itemsPerPage, setItemsPerPage] = useState<number>(window.innerWidth < 768 ? 2 : 4);
+  const [itemsPerPage, setItemsPerPage] = useState<number>(getItemsPerPage(window.innerWidth));
 
   useEffect(() => {
-    const handleResize = () => {
-      setItemsPerPage(window.innerWidth < 768 ? 2 : 4);
-    };
+    const handleResize = () => setItemsPerPage(getItemsPerPage(window.innerWidth));
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
